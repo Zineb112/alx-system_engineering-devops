@@ -1,0 +1,3 @@
+#!/bin/bash
+grep -i "^[&-z]" /etc/ssh/sshd_config
+
