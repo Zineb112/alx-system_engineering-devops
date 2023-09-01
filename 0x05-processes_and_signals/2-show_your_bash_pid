@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays lines containing the word "bash" and retrieves the PID of your Bash process.
+
+# Disable shellcheck error SC2009 for the ps and grep commands
+# shellcheck disable=SC2009
+ps aux | grep "[b]ash"
