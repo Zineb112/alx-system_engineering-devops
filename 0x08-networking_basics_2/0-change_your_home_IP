@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Check if the script is run with superuser privileges
+if [[ $EUID -ne 0 ]]; then
+    echo "This script must be run as root (use sudo)"
+    exit 1
+fi
+
+# Define the new IP address mappings
+new_localhost_ip="127.0.0.2"
+new_facebook_ip="8.8.8.8"
+
+# Modify the /etc/hosts file
+sed -i "s/127.0.0.1[[:space:]]localhost/127.0.0.1 localhost\n$new_localhost_ip localhost/" /etc/hosts
+sed -i "s/facebook.com[[:space:]]/facebook.com $new_facebook_ip /" /etc/hosts
+
+# Print confirmation
+echo "IP address mappings have been updated:"
+echo "localhost now resolves to $new_localhost_ip"
+echo "facebook.com now resolves to $new_facebook_ip"
