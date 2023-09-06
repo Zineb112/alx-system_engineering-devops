@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Use ifconfig to get information about network interfaces and filter for IPv4 addresses
+ipv4_addresses=$(ifconfig | grep -Eo 'inet ([0-9]*\.){3}[0-9]*' | awk '{print $2}')
+
+# Print the IPv4 addresses
+echo "$ipv4_addresses"
