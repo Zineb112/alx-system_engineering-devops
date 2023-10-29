@@ -1,3 +1,1 @@
-0x00-shell_basics
-0x01. Shell, permissions
-0x02-shell_redirections
+0x04-loops_conditions_and_parsing
