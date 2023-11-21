@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Script to install MySQL 5.7.x on web-01 server
+
+# Update package list
+sudo apt-get update
+
+# Install MySQL
+sudo apt-get install -y mysql-server-5.7
+
+# Additional configuration steps if needed
+# ...
+
+# Check MySQL version
+mysql --version
